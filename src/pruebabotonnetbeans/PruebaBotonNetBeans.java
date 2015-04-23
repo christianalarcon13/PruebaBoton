@@ -5,17 +5,49 @@
  */
 package pruebabotonnetbeans;
 
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 /**
  *
  * @author User
  */
-public class PruebaBotonNetBeans {
+public class PruebaBotonNetBeans extends JFrame{
+    private JButton cerrar;
+    public PruebaBotonNetBeans()
+    {
+        super("Prueba Boton");
+        cerrar=new JButton("Cerrar");
+        
+        Manejador manejador=new Manejador();
+        cerrar.addActionListener(manejador);
+        
+        add(cerrar);
+        setSize(200,200);       
+        setVisible(true);
+        
+    }
+    
+    private class Manejador implements ActionListener
+    {
+        public void actionPerformed(ActionEvent evento)
+        {
+            if(evento.getSource()==cerrar)
+                System.exit(0);
+        }//fin del metodo actionPerformed
+    }
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new PruebaBotonNetBeans();
+        
     }
     
 }
