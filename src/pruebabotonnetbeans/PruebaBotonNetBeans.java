@@ -38,7 +38,7 @@ public class PruebaBotonNetBeans extends JFrame{
             if(evento.getSource()==cerrar)
                 System.exit(0);
         }//fin del metodo actionPerformed
-    }
+    }//fin de la clase privada Manejador
     
 
     /**
